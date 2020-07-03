@@ -37,7 +37,7 @@ double** getInputMatrix(double **mat, int *m, int *n){
   return mat;
 }
 
-double** convolution2D(double **mat, double **filter, int *matR, int *matC, int *filterR, int *filterC){
+double** convolution2D(double **mat, double **kernel, int *matR, int *matC, int *kernelR, int *kernelC){
   double **result;
 
   result = (double **)malloc(*matR * sizeof(double*));
@@ -49,16 +49,16 @@ double** convolution2D(double **mat, double **filter, int *matR, int *matC, int 
 
 
 int main() {
-  int matR, matC, filterR, filterC; // Número de linhas e colunas da matriz a ser processada e do filtro
-  double **mat, **filter, **result; // Matriz a ser processada, filtro e resultado
+  int matR, matC, kernelR, kernelC; // Número de linhas e colunas da matriz a ser processada e do filtro
+  double **mat, **kernel, **result; // Matriz a ser processada, filtro e resultado
 
   printf("MATRIZ A SER PROCESSADA:\n\n");
   mat = getInputMatrix(mat, &matR, &matC);
 
   printf("\nFILTRO:\n\n");
-  filter = getInputMatrix(filter, &filterR, &filterC);
+  kernel = getInputMatrix(kernel, &kernelR, &kernelC);
 
-  result = convolution2D(mat, filter, &matR, &matC, &filterR, &filterC);
+  result = convolution2D(mat, kernel, &matR, &matC, &kernelR, &kernelC);
 
   printMatrix(result, &matR, &matC);
 
