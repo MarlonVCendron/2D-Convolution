@@ -56,8 +56,6 @@ double** convolution2D(double **mat, double **kernel, int *matR, int *matC, int 
   for(int i = 0; i < *matR; i++)
     result[i] = (double *)malloc(*matC * sizeof(double));
 
-  int squaredKernelS = *kernelS * *kernelS;
-
   for (size_t i = 0; i < *matR; i++) { // Linhas da matriz
     for (size_t j = 0; j < *matC; j++) { // Colunas da matriz
 
@@ -78,7 +76,6 @@ double** convolution2D(double **mat, double **kernel, int *matR, int *matC, int 
       }
     }
   }
-
 
   return result;
 }
