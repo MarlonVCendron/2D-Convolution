@@ -48,6 +48,7 @@ O mesmo processo é feito para as colunas em um outro loop dentro do das linhas.
 
 Exemplo dos valores de ii e jj para i = 1, j = 2 e um kernel com tamanho 3, kernelS = 3:
 
+<div style="display:flex; justify-content: center;">
 <table>
   <tr>
     <td style="font-weight: bold;font-family: monospace">ii</td>
@@ -74,9 +75,11 @@ Exemplo dos valores de ii e jj para i = 1, j = 2 e um kernel com tamanho 3, kern
     <td>3</td>
   </tr>
 </table>
+</div>
 
 A matriz:
 
+<div style="display:flex; justify-content: center;">
 <table>
   <tr>
     <td>0,0</td>
@@ -114,6 +117,7 @@ A matriz:
     <td>4,4</td>
   </tr>
 </table>
+</div>
 
 ```
 for (int p = 0; p < *kernelS; p++) { // Linhas do kernel
@@ -138,5 +142,5 @@ result[i][j] += mat[ii][jj] * kernel[p][q]; // Cada número calculado é acresce
 Depois de calcular o resultado para todos os índices, a função retorna a matriz resultante.
 
 ```
-return 0;
+return result;
 ```
